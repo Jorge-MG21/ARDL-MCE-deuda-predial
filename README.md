@@ -8,10 +8,11 @@ Analisis de la incidencia de la deuda predial pendiente de cobro y la morosidad 
 |---------|-------------|
 | `ardl_mce_analisis.R` | Script ARDL + MCE con 6 especificaciones alternativas |
 | `data/Nueva_dta_2018_2025.csv` | Datos mensuales 2018-2025 (parcial; completar con Excel) |
+| `resultados/RESULTADOS_Y_ANALISIS_ARDL.md` | **Informe completo de resultados preliminares, metodologia, criterios de decision y guia de interpretacion** |
 
 ## Como ejecutar
 
-1. Coloca `Nueva_dta.xlsx` (Hoja1) en la carpeta del script.
+1. Coloca `Nueva_dta.xlsx` (Hoja1) en la carpeta del script o en `data/`.
 2. En R:
 
 ```r
@@ -31,10 +32,21 @@ source("ardl_mce_analisis.R")
 
 El script reporta explicitamente si cada modelo apoya o no la hipotesis de un efecto **negativo y significativo** de la deuda/morosidad sobre la ejecucion de la inversion.
 
+## Resultados y toma de decisiones
+
+Ver el informe detallado en:
+**[resultados/RESULTADOS_Y_ANALISIS_ARDL.md](resultados/RESULTADOS_Y_ANALISIS_ARDL.md)**
+
+Incluye:
+- Analisis descriptivo de los datos parciales disponibles
+- Criterios explicitos para decidir si un modelo apoya la hipotesis
+- Escenarios de interpretacion y acciones recomendadas
+- Proximos pasos priorizados para completar la investigacion
+
 ## Datos
 
 - Fuente: registros municipales MDJLO + MEF + SATJLO
 - Periodo: enero 2018 - diciembre 2025 (96 obs. mensuales)
 - Variables clave: deuda, recaudacion, devengado, foncomun, pim, Morosidad
 
-**Nota:** Sube el Excel completo (`Nueva_dta.xlsx`) a la carpeta `data/` desde la interfaz web de GitHub si necesitas todas las columnas y anos 2015-2025.
+**Nota importante:** El CSV actual solo contiene 2018-2019 (24 obs.). Sube el Excel completo (`Nueva_dta.xlsx`) a la carpeta `data/` desde la interfaz web de GitHub para poder ejecutar el analisis ARDL completo y actualizar los resultados.
